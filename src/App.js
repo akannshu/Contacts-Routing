@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ListContacts from './ListContacts'
 
 class ContactList extends React.Component {
   render(){
