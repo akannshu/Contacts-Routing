@@ -6,7 +6,17 @@ class ContactList extends React.Component {
     return (
            <ol>
              {people.map(person => (
-               <li>{person.name}</li>
+               <li key={contact.id} className='contact-list-item'>
+                 <div className="contact-avatar" style={{
+                       backgroundImage: `url(${contact.avatarURL})`
+                   }}>
+                 </div>
+                 <div className='contact-details'>
+                   <p>{contact.name}</p>
+                   <p>{contact.email}</p>
+                 </div>
+                 <button className='contact-remove'>Remove</button>
+               </li>
              ))}
            </ol>
          )
@@ -24,14 +34,6 @@ class App extends Component {
             {name: 'Raj'}
 
           ]}/>
-
-          <ContactList contacts = {[
-
-              {name: 'Nilesh'},
-              {name: 'Faizal'},
-              {name: 'Pankaj'}
-
-            ]}/>
       </div>
     )
   }
