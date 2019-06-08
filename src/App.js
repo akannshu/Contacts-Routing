@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import ListContacts from './ListContacts'
+import CreateContact from './CreateContact'
 
 class App extends Component {
   state = {
+    screen: 'list',
     contacts: [
       {
         "id":"rahul",
@@ -33,10 +35,15 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        <ListContacts
-          onDeleteConatact={this.removeContact}
-          contacts={this.state.contacts}
-          />
+          {this.state.screen === 'list' && (
+           <ListContacts
+             onDeleteContact={this.removeContact}
+             contacts={this.state.contacts}
+           />
+         )}
+         {this.state.screen === 'create' && (
+           <CreateContact/>
+         )}
       </div>
     )
   }
