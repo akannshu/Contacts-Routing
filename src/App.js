@@ -32,6 +32,8 @@ class App extends Component {
       contacts: state.contacts.filter((c) => c.id !== contact.id)
     }))
   }
+
+  
   render(){
     return(
       <div className="App">
@@ -39,6 +41,9 @@ class App extends Component {
            <ListContacts
              onDeleteContact={this.removeContact}
              contacts={this.state.contacts}
+             onNavigate={() => {
+             this.setState({ screen: 'create' })
+           }}
            />
          )}
          {this.state.screen === 'create' && (

@@ -80,7 +80,7 @@ body, .app {
 .list-contacts-top {
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 10px;
   border-bottom: 1px solid #d5d8df;
   display: flex;
 }
@@ -100,10 +100,10 @@ body, .app {
   display: block;
   width: 73px;
   background: white;
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: 28px;
-  font-size: 0;
+  color: blue;
+  align: center;
+  font-size: 18px;;
 }
 
 .showing-contacts {
