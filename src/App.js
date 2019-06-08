@@ -1,40 +1,33 @@
 import React, { Component } from 'react'
 import ListContacts from './ListContacts'
 
-class ContactList extends React.Component {
-  render(){
-    const people = this.props.contacts
-    return (
-           <ol>
-             {people.map(person => (
-               <li key={contact.id} className='contact-list-item'>
-                 <div className="contact-avatar" style={{
-                       backgroundImage: `url(${contact.avatarURL})`
-                   }}>
-                 </div>
-                 <div className='contact-details'>
-                   <p>{contact.name}</p>
-                   <p>{contact.email}</p>
-                 </div>
-                 <button className='contact-remove'>Remove</button>
-               </li>
-             ))}
-           </ol>
-         )
-  }
-}
-
 class App extends Component {
+  state = {
+    contacts: [
+      {
+        "id":"rahul",
+        "name":"Rahul Kumar",
+        "email":"rahulkumar@gmail.com",
+        "avatarURL": ""
+      },
+      {
+        "id":"tarun",
+        "name":"Tarun Singh",
+        "email":"tarun@gmail.com",
+        "avatarURL": ""
+      },
+      {
+        "id":"raj",
+        "name":"Raj",
+        "email":"raj@gmail.com",
+        "avatarURL": ""
+      }
+    ]
+  }
   render(){
     return(
       <div className="App">
-        <ContactList contacts = {[
-
-            {name: 'Rahul'},
-            {name: 'Tarun'},
-            {name: 'Raj'}
-
-          ]}/>
+        <ListContacts contacts={this.state.contacts}/>
       </div>
     )
   }
