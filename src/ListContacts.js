@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 function ListContacts (props) {
@@ -9,7 +10,7 @@ function ListContacts (props) {
             className='search-contacts'
             type='text'
             placeholder='Search contacts' />
-         <a href="#create" onClick={() => props.onNavigate()} className="add-contact">New</a>
+         <Link to="/create" onClick={() => props.onNavigate()} className="add-contact">New</Link>
          </div>
 
    <ol className='contact-list'>
