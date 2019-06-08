@@ -5,7 +5,6 @@ import CreateContact from './CreateContact'
 
 class App extends Component {
   state = {
-    screen: '',
     contacts: [
       {
         "id":"rahul",
@@ -38,13 +37,10 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-         <Route path='/' render={() => (
+         <Route exact path='/' render={() => (
            <ListContacts
              onDeleteContact={this.removeContact}
              contacts={this.state.contacts}
-             onNavigate={() => {
-             this.setState({ screen: 'create' })
-           }}
            />
          )} />
        <Route path='/create' component={CreateContact} />

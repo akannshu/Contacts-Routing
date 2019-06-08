@@ -10,7 +10,7 @@ function ListContacts (props) {
             className='search-contacts'
             type='text'
             placeholder='Search contacts' />
-         <Link to="/create" onClick={() => props.onNavigate()} className="add-contact">New</Link>
+         <Link to="/create" className="add-contact">New</Link>
          </div>
 
    <ol className='contact-list'>
